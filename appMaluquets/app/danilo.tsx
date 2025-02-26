@@ -6,11 +6,12 @@ import { FontAwesome } from '@expo/vector-icons';
 
 export default function Danilo() {
     const { lowPowerMode, batteryLevel, batteryState } = usePowerState();
-    let bateria = 1
 
     let buttonColor = 'green';
     if (batteryLevel > 0.6) {
         buttonColor = 'green';
+    } else if( batteryLevel <= 0.60 && batteryLevel > 0.25) {
+        buttonColor = 'yellow';
     } else {
         buttonColor = 'red';
     }
