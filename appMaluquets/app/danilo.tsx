@@ -30,7 +30,7 @@ export default function Danilo() {
                         </View>
                     </View>
                     <View style={styles.page} key="2">
-                        <Text >Modo pouca energia ligado?</Text>
+                        <Text  style={styles.subtitulo}>Modo pouca energia ligado?</Text>
                         {
                             lowPowerMode
                                 ?
