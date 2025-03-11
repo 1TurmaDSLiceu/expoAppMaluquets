@@ -40,7 +40,7 @@ lowPowerMode: Booleano que determina se o dispositivo está no modo de economia 
 ### 3.1 Mapeamento de Nível de Bateria para Cor 🌈
 A aplicação define a cor do indicador da bateria com base no valor de batteryLevel. A lógica é a seguinte:
 
-javascript
+```tsx
 let buttonColor = 'green';
 if (batteryLevel > 0.6) {
     buttonColor = 'green';
@@ -49,6 +49,8 @@ if (batteryLevel > 0.6) {
 } else {
     buttonColor = 'red';
 }
+```
+
 Esta lógica determina:
 
 Acima de 60%: Indicador verde.
@@ -60,7 +62,7 @@ Entre 25% e 60%: Indicador amarelo.
 ### 3.2 Renderização Condicional do Estado da Bateria 🔄
 Para exibir o estado atual da bateria, o componente utiliza renderização condicional baseada no valor de batteryState. Por exemplo:
 
-javascript
+```tsx
 {batteryState !== null && (
     <View style={styles.batteryState}>
         {batteryState === 0 && (
@@ -89,6 +91,8 @@ javascript
         )}
     </View>
 )}
+```
+
 Utiliza-se fragmentos (<>...</>) para agrupar múltiplos elementos sem introduzir nós adicionais na árvore de renderização, garantindo clareza e eficiência.
 
 ## 4. Funcionamento do PagerView 📄
@@ -102,14 +106,15 @@ import PagerView from 'react-native-pager-view';
 Propriedade initialPage
 Define qual página será exibida inicialmente. No código, o valor 0 indica que a primeira página (index 0) será mostrada ao iniciar o aplicativo:
 
-javascript
+```tsx
 <PagerView style={styles.container} initialPage={0}>
   {/* Páginas definidas aqui */}
 </PagerView>
+```
 Estrutura dos Filhos (Pages)
 Cada página é definida como um componente filho dentro do PagerView e deve possuir uma propriedade key única. No exemplo, há três páginas, cada uma contendo um conjunto específico de informações:
 
-javascript
+```tsx
 <View style={styles.page} key="1">
   {/* Conteúdo da Página 1 */}
 </View>
@@ -119,6 +124,8 @@ javascript
 <View style={styles.page} key="3">
   {/* Conteúdo da Página 3 */}
 </View>
+```
+
 Navegação por Swipe
 O PagerView permite a navegação entre as páginas por meio de gestos horizontais. Isso fornece uma experiência de usuário fluida, onde o usuário pode deslizar para a esquerda ou direita para alternar entre diferentes visualizações sem a necessidade de botões de navegação explícitos.
 
