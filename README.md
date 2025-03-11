@@ -136,7 +136,7 @@ Cada página contém componentes que reagem a mudanças no estado da bateria (po
 O componente funcional, denominado Danilo, é estruturado da seguinte forma:
 
 Container Principal
-Um LinearGradient encapsula todo o conteúdo, aplicando um fundo com gradiente.
+Uma View encapsula todo o conteúdo.
 
 Título
 Um componente Text exibe o título da aplicação.
@@ -163,4 +163,4 @@ Eficiência na Renderização
 A utilização do PagerView para segmentar o conteúdo permite que cada página seja renderizada conforme necessário, contribuindo para uma performance otimizada mesmo com atualizações frequentes do estado da bateria.
 
 ## 7. Conclusão ✅
-A implementação deste aplicativo demonstra uma integração robusta entre a coleta de dados de hardware (via expo-battery) e a apresentação dinâmica de informações em uma interface modular. O uso do PagerView permite uma navegação intuitiva entre páginas, enquanto a lógica de negócio, baseada em hooks e renderização condicional, garante que o estado da bateria seja monitorado e exibido com precisão em tempo real. Essa abordagem facilita a manutenção e a escalabilidade do código, permitindo a adição de novas funcionalidades de forma organizada e eficiente.
+Este aplicativo combina a coleta de dados da bateria (usando o expo-battery) com uma exibição dinâmica e organizada das informações. Com o PagerView, a navegação entre as diferentes páginas fica natural e intuitiva. 
