@@ -1,5 +1,5 @@
-# 🛠️ Documentação do Aplicativo de Monitoramento de Bateria 📱
-## 1. Dependências e Importações 📦
+# Documentação do Aplicativo expoAppMaluco
+## 1. Dependências e Importações 
 O aplicativo utiliza as seguintes bibliotecas e módulos:
 
 React Native: Fornece componentes básicos como Text, View e StyleSheet para estruturação da interface.
@@ -22,11 +22,9 @@ lowPowerMode: Booleano que informa se o modo de economia de energia está ativad
 
 react-native-pager-view: Permite a criação de uma interface de páginas deslizantes (swipe) através do componente PagerView.
 
-expo-linear-gradient: Aplica um gradiente ao fundo da aplicação.
-
 @expo/vector-icons: Utilizada para renderizar ícones, especificamente MaterialIcons e FontAwesome, que representam graficamente os estados da bateria.
 
-## 2. Monitoramento do Estado da Bateria 🔋
+## 2. Monitoramento do Estado da Bateria 
 2.1 Hook usePowerState
 O hook usePowerState é utilizado para obter informações em tempo real sobre o estado da bateria. Ele retorna um objeto contendo:
 
@@ -36,8 +34,8 @@ batteryState: Valor numérico que indica o status da bateria (0 para desconhecid
 
 lowPowerMode: Booleano que determina se o dispositivo está no modo de economia de energia.
 
-## 3. Lógica de Negócio 🧠
-### 3.1 Mapeamento de Nível de Bateria para Cor 🌈
+## 3. Lógica de Negócio 
+### 3.1 Mapeamento de Nível de Bateria para Cor 
 A aplicação define a cor do indicador da bateria com base no valor de batteryLevel. A lógica é a seguinte:
 
 ```tsx
@@ -59,7 +57,7 @@ Entre 25% e 60%: Indicador amarelo.
 
 25% ou abaixo: Indicador vermelho.
 
-### 3.2 Renderização Condicional do Estado da Bateria 🔄
+### 3.2 Renderização Condicional do Estado da Bateria 
 Para exibir o estado atual da bateria, o componente utiliza renderização condicional baseada no valor de batteryState. Por exemplo:
 
 ```tsx
@@ -95,7 +93,7 @@ Para exibir o estado atual da bateria, o componente utiliza renderização condi
 
 Utiliza-se fragmentos (<>...</>) para agrupar múltiplos elementos sem introduzir nós adicionais na árvore de renderização, garantindo clareza e eficiência.
 
-## 4. Funcionamento do PagerView 📄
+## 4. Funcionamento do PagerView 
 O PagerView é o componente responsável por criar uma interface de navegação por páginas por meio de gestos de deslize (swipe). A seguir, os principais aspectos técnicos do seu funcionamento:
 
 Importação e Estruturação
@@ -132,7 +130,7 @@ O PagerView permite a navegação entre as páginas por meio de gestos horizonta
 Integração com a Lógica do Aplicativo
 Cada página contém componentes que reagem a mudanças no estado da bateria (por exemplo, exibição do nível de bateria, estado do carregamento e modo de economia de energia). Assim, a navegação entre páginas permite segmentar a apresentação dos dados, mantendo o código organizado e modular.
 
-## 5. Estrutura do Componente 🏗️
+## 5. Estrutura do Componente 
 O componente funcional, denominado Danilo, é estruturado da seguinte forma:
 
 Container Principal
@@ -152,7 +150,7 @@ Página 3: Exibição do estado da bateria, com renderização condicional basea
 
 Essa divisão modular facilita a manutenção e a escalabilidade do código, permitindo que novas funcionalidades sejam adicionadas sem interferir na estrutura existente.
 
-## 6. Considerações Técnicas 🔧
+## 6. Considerações Técnicas 
 Reatividade e Hooks
 O uso de hooks, como usePowerState, assegura que alterações no estado da bateria sejam automaticamente refletidas na interface, eliminando a necessidade de atualizações manuais.
 
@@ -162,5 +160,5 @@ A lógica de negócio (como o mapeamento de cores e a renderização condicional
 Eficiência na Renderização
 A utilização do PagerView para segmentar o conteúdo permite que cada página seja renderizada conforme necessário, contribuindo para uma performance otimizada mesmo com atualizações frequentes do estado da bateria.
 
-## 7. Conclusão ✅
+## 7. Conclusão 
 Este aplicativo combina a coleta de dados da bateria (usando o expo-battery) com uma exibição dinâmica e organizada das informações. Com o PagerView, a navegação entre as diferentes páginas fica natural e intuitiva. 
